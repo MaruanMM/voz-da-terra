@@ -14,20 +14,45 @@ st.set_page_config(
 
 # Customização Visual (CSS) para simular um marketplace premium
 # Focado no público de alto valor do turismo (Hotéis e Restaurantes B2B).
+# Substitua o bloco st.markdown(""" <style> ... </style> """, ...) por este:
+
 st.markdown("""
 <style>
+    /* Força o fundo da página e do cabeçalho */
     [data-testid="stHeader"] {background-color: transparent;}
-    .reportview-container .main .block-container{padding-top: 1rem;}
-    .stApp {background-color: #F8F5F1;} /* Fundo linho claro */
+    .stApp {background-color: #F8F5F1 !important;} 
     
-    h1 {color: #4A3E30; font-family: 'Helvetica Neue', sans-serif; font-weight: 300; text-align: center;}
-    h2 {color: #5D4D3D; font-family: 'Helvetica Neue', sans-serif; font-weight: 400; font-size: 1.5rem;}
-    h3 {color: #7D6C5D; font-family: 'Helvetica Neue', sans-serif; font-weight: 500; font-size: 1.2rem;}
-    p {color: #444; font-family: 'Arial', sans-serif; font-size: 1.1rem; line-height: 1.7;}
+    /* Força a cor de todos os textos Markdown para garantir visibilidade */
+    .stMarkdown, p, span {
+        color: #444444 !important;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Estilização específica dos Títulos com '!important' para vencer o Dark Mode */
+    h1 {
+        color: #4A3E30 !important; 
+        font-family: 'Helvetica Neue', sans-serif; 
+        font-weight: 300; 
+        text-align: center;
+    }
+    h2 {
+        color: #5D4D3D !important; 
+        font-family: 'Helvetica Neue', sans-serif; 
+        font-weight: 400; 
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    h3 {
+        color: #7D6C5D !important; 
+        font-family: 'Helvetica Neue', sans-serif; 
+        font-weight: 500; 
+        font-size: 1.2rem;
+    }
     
+    /* Tags de artesão e preço */
     .artisan-tag {
-        background-color: #DFD7CD;
-        color: #4A3E30;
+        background-color: #DFD7CD !important;
+        color: #4A3E30 !important;
         padding: 6px 12px;
         border-radius: 20px;
         font-size: 0.95rem;
@@ -37,17 +62,23 @@ st.markdown("""
     }
     
     .price-tag {
-        font-size: 2.5rem;
-        color: #4A3E30;
+        font-size: 2.5rem !important;
+        color: #4A3E30 !important;
         font-weight: 500;
         margin-top: 25px;
     }
     
     .impact-text {
-        color: #9D8771;
+        color: #9D8771 !important;
         font-style: italic;
         font-size: 1.05rem;
-        margin-top: -12px;
+    }
+
+    /* Ajuste para o botão não sumir no mobile */
+    .stButton button {
+        background-color: #4A3E30 !important;
+        color: white !important;
+        border-radius: 8px;
     }
 </style>
 """, unsafe_allow_html=True)
