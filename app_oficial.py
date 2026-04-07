@@ -75,10 +75,29 @@ st.markdown("""
     }
 
     /* Ajuste para o botão não sumir no mobile */
-    .stButton button {
-        background-color: #4A3E30 !important;
+    /* Estilização Geral dos Botões */
+    .stButton > button {
+        background-color: #4A3E30 !important; /* Marrom escuro elegante */
+        color: #FFFFFF !important; /* BRANCO PURO para a fonte */
+        border-radius: 10px !important;
+        border: none !important;
+        height: 3em !important;
+        width: 100% !important;
+        font-weight: bold !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Garante que o texto dentro do botão seja branco mesmo em hover (passar o mouse) */
+    .stButton > button:hover {
+        background-color: #5D4D3D !important;
+        color: #FFFFFF !important;
+        border: 1px solid #DFD7CD !important;
+    }
+
+    /* Corrigindo especificamente o texto interno que o Streamlit injeta */
+    .stButton > button div p {
         color: white !important;
-        border-radius: 8px;
+        font-weight: bold !important;
     }
 </style>
 """, unsafe_allow_html=True)
